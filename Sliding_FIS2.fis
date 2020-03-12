@@ -1,0 +1,47 @@
+[System]
+Name='Sliding_FIS2'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='S'
+Range=[-1 1]
+NumMFs=3
+MF1='N':'gaussmf',[0.4176 -0.9916]
+MF2='Z':'gaussmf',[0.3539 -1.388e-17]
+MF3='P':'gaussmf',[0.3612 0.9917]
+
+[Input2]
+Name='Sd'
+Range=[-1 1]
+NumMFs=3
+MF1='N':'gaussmf',[0.4176 -0.9916]
+MF2='Z':'gaussmf',[0.3539 -1.388e-17]
+MF3='P':'gaussmf',[0.3608 0.9916]
+
+[Output1]
+Name='u_fis'
+Range=[-1 1]
+NumMFs=3
+MF1='NE':'gaussmf',[0.5521 -1.15]
+MF2='ZE':'gaussmf',[0.3539 -1.388e-17]
+MF3='PE':'gaussmf',[0.3608 0.9916]
+
+[Rules]
+1 1, 3 (1) : 1
+2 1, 3 (1) : 1
+3 1, 2 (1) : 1
+1 2, 3 (1) : 1
+2 2, 2 (1) : 1
+3 2, 1 (1) : 1
+1 3, 2 (1) : 1
+2 3, 1 (1) : 1
+3 3, 1 (1) : 1

@@ -1,0 +1,62 @@
+[System]
+Name='Att_FIS'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=20
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Gdis'
+Range=[0 1]
+NumMFs=4
+MF1='Z':'gaussmf',[0.05521 -0.015]
+MF2='M':'gaussmf',[0.08493 0.4]
+MF3='L':'gauss2mf',[0.102 0.722910052910053 0.116 1.12691005291005]
+MF4='S':'gaussmf',[0.05478 0.1705]
+
+[Input2]
+Name='Gspeed'
+Range=[-1 1]
+NumMFs=5
+MF1='NS':'gaussmf',[0.1274 -0.3]
+MF2='Z':'gaussmf',[0.08493 3.469e-18]
+MF3='PS':'gaussmf',[0.1274 0.3]
+MF4='NL':'gauss2mf',[0.05436 -1.036 0.1699 -0.75]
+MF5='PL':'gauss2mf',[0.111 0.58307346488017 0.0375 1.04]
+
+[Output1]
+Name='attraction'
+Range=[0 1]
+NumMFs=4
+MF1='ZA':'gaussmf',[0.05593 -0.01585]
+MF2='SA':'gaussmf',[0.06582 0.2025]
+MF3='LA':'gauss2mf',[0.118 0.828 0.118 1]
+MF4='MA':'gaussmf',[0.1062 0.45]
+
+[Rules]
+3 4, 3 (1) : 1
+3 1, 3 (1) : 1
+3 2, 3 (1) : 1
+3 3, 4 (1) : 1
+3 5, 1 (1) : 1
+2 4, 3 (1) : 1
+2 1, 4 (1) : 1
+2 2, 3 (1) : 1
+2 3, 4 (1) : 1
+2 5, 2 (1) : 1
+1 4, 3 (1) : 1
+1 1, 4 (1) : 1
+1 2, 1 (1) : 1
+1 3, 2 (1) : 1
+1 5, 4 (1) : 1
+4 4, 3 (1) : 1
+4 1, 4 (1) : 1
+4 2, 3 (1) : 1
+4 3, 4 (1) : 1
+4 4, 3 (1) : 1
